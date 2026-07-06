@@ -21,7 +21,7 @@ pipeline {
           def app = docker.image("${IMAGE_NAME}:${IMAGE_TAG}")
           app.run('-d -p 5622:80 --name test-${BUILD_NUMBER}')
           sh 'sleep 5'
-          sh 'curl -f http://localhost:5622'
+          sh 'curl -f 54.211.188.243:5622'
         }
       }
     }
